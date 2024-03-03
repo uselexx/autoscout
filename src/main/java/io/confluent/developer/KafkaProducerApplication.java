@@ -88,7 +88,7 @@ public class KafkaProducerApplication {
     }
 
     public static void main(String[] args) throws Exception {
-        String argument = "src/main/resources/dev.properties";
+        String argument = "src/main/resources/dev.properties"; //TODO remove
         final Properties props = KafkaProducerApplication.loadProperties(argument);
         final String topic = props.getProperty("output.topic.name");
         final Producer<String, String> producer = new KafkaProducer<>(props);
