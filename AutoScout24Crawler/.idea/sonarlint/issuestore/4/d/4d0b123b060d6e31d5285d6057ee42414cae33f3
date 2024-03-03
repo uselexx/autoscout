@@ -1,7 +1,0 @@
-
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ûªäºøÿÿÿÿ8Ÿ«õƒà1
-
-java:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(Ôô¡Óüÿÿÿÿ8Ä«õƒà1
-L	java:S106"+Replace this use of System.out by a logger.(ä¦Éúúÿÿÿÿ8Ğ«õƒà1
-L	java:S106%"+Replace this use of System.out by a logger.(ĞÙÀ‰ıÿÿÿÿ8Õ«õƒà1
-G	java:S106'"+Replace this use of System.out by a logger.(ºçáå8Õ«õƒà1
