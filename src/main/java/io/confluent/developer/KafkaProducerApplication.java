@@ -11,14 +11,10 @@ import org.jsoup.select.Elements;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Collection;
-import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 
 public class KafkaProducerApplication {
 
@@ -51,13 +47,14 @@ public class KafkaProducerApplication {
 
     public static Properties loadProperties(String fileName) throws IOException {
         final Properties envProps = new Properties();
-        final FileInputStream input = new FileInputStream(fileName);
-        envProps.load(input);
-        input.close();
-
+        try (FileInputStream input = new FileInputStream(fileName)) {
+            envProps.load(input);
+        }
         return envProps;
     }
 
+
+    //printMetadata was used for testing purposes only
     public void printMetadata(final Collection<Future<RecordMetadata>> metadata,
                               final String fileName) {
         System.out.println("Offsets and timestamps committed in batch from " + fileName);
